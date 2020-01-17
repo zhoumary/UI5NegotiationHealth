@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="NegoHealthManagement.controller.NegotiationHealth"
+    controllerName="MGitNegoHealth.controller.NegotiationHealth"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:l="sap.ui.layout"
@@ -20,38 +20,6 @@
                         direction="Column"
                         width="100%">
                         <items>
-                            <IconTabBar
-                                    id="idIconTabBar"
-                                    select="handleIconTabBarSelect"
-                                    class="sapUiResponsiveContentPadding test"
-                                    >
-                                <items>
-                                    <IconTabFilter
-                                            showAll="true"
-                                            count="77"
-                                            text="Products"
-                                            key="All" />
-                                    <IconTabSeparator />
-                                    <IconTabFilter
-                                            icon="sap-icon://begin"
-                                            iconColor="Positive"
-                                            count="{productView>/inStock}"
-                                            text="Plenty in Stock"
-                                            key="Plenty" />
-                                    <IconTabFilter
-                                            icon="sap-icon://compare"
-                                            iconColor="Critical"
-                                            count="{productView>/shortage}"
-                                            text="Shortage"
-                                            key="Shortage" />
-                                    <IconTabFilter
-                                            icon="sap-icon://inventory"
-                                            iconColor="Negative"
-                                            count="{productView>/outOfStock}"
-                                            text="Out of Stock"
-                                            key="Out" />
-                                </items>
-                            </IconTabBar>
                             <IconTabBar
                                     id="idIconTabBar1"
                                     select="handleIconTabBarSelect"
@@ -83,6 +51,32 @@
                                             key="Out" />
                                 </items>
                             </IconTabBar>
+
+                            <Table id="negoTable"
+                                   items="{/negoData}"
+                                   headerText="Negotiation Health (Click on an item to set as navigated)">
+                                <columns>
+                                    <Column id="custRegion" width="12em"><Text text="Customer Region" /></Column>
+                                    <Column id="hierarForth" minScreenWidth="Tablet" demandPopin="true"><Text text="Hierarchy 4" /></Column>
+                                    <Column id="targetMargin" minScreenWidth="Tablet" demandPopin="true" hAlign="End"><Text text="Target Margin" /></Column>
+                                    <Column id="minPercent" minScreenWidth="Tablet" demandPopin="true"><Text text="Min Percentage of the Target" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem
+                                            type="Active"
+                                            press="onPress">
+                                        <cells>
+                                            <Text text="{CustRegion} + {CustRegionDescription}" />
+                                            <Text text="{HierarchyForth} + {HierarchyDescription}" />
+                                            <ObjectNumber
+                                                number="{TargetMargin}"
+                                                unit="{TargetMarginUnitCode}" />
+                                            <ObjectNumber
+                                                number="{MinPercent}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
                         </items>
                     </VBox>
                 </content>

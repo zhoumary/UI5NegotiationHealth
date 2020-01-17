@@ -10,7 +10,16 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "ach": "ach"
+    "ach": "ach",
+    "dataSources": {
+      "negoHealthRemote": {
+        "uri": "http://localhost:8081/https://my344548.crm.ondemand.com/sap/c4c/odata/cust/v1/ibso_odata_api_cn/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
   },
 
   "sap.ui": {
@@ -55,6 +64,9 @@
         "settings": {
           "bundleName": "MGitNegoHealth.i18n.i18n"
         }
+      },
+      "negotiations": {
+        "dataSource": "negoHealthRemote"
       }
     },
     "routing": {
@@ -63,10 +75,24 @@
         "viewType": "XML",
         "viewPath": "MGitNegoHealth.view",
         "controlId": "app",
-        "controlAggregation": "pages"
+        "controlAggregation": "pages",
+        "async": true
       },
-      "routes": [],
-      "targets": []
+      "routes": [
+        {
+          "pattern": "",
+          "name": "negotiationHealth",
+          "target": [
+            "negotiationHealth"
+          ]
+        }
+      ],
+      "targets": {
+        "negotiationHealth": {
+          "viewId": "negotiationHealth",
+          "viewName": "NegotiationHealth"
+        }
+      }
     },
     "resources": {
       "css": [{

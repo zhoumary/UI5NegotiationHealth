@@ -1,14 +1,17 @@
 {
-  "name": "MGitNegoHealth",
+  "name": "masterdetail",
   "version": "1.0.0",
-  "description": "",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "grunt serve",
+    "build": "grunt build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "proxy": "node proxy.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cors-anywhere": "^0.4.1",
     "grunt": "^1.0.1",
     "grunt-connect-proxy": "^0.2.0",
     "grunt-contrib-clean": "^1.1.0",
@@ -23,5 +26,20 @@
     "grunt-openui5": "^0.12.0",
     "grunt-zip": "^0.17.1",
     "jit-grunt": "^0.10.0"
-  }
+  },
+  "dependencies": {
+    "@openui5/sap.f": "^1.73.2",
+    "@openui5/sap.m": "^1.73.2",
+    "@openui5/sap.tnt": "^1.73.2",
+    "@openui5/sap.ui.codeeditor": "^1.73.2",
+    "@openui5/sap.ui.commons": "^1.73.1",
+    "@openui5/sap.ui.core": "^1.73.2",
+    "@openui5/sap.ui.documentation": "^1.73.2",
+    "@openui5/sap.ui.integration": "^1.73.2",
+    "@openui5/sap.ui.layout": "^1.73.2",
+    "@openui5/sap.ui.suite": "^1.73.2",
+    "@openui5/sap.ui.support": "^1.73.2",
+    "@openui5/sap.ui.table": "^1.73.2"
+  },
+  "description": ""
 }

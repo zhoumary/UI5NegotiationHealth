@@ -1,12 +1,12 @@
-<mvc:View controllerName="MGitNegoHealth.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-          displayBlock="true" xmlns="sap.m">
-    <App>
-        <pages>
-            <Page title="{i18n>title}" class="sapUiContentPadding">
-                <content>
-
-                </content>
-            </Page>
-        </pages>
+<mvc:View
+        controllerName="MGitNegoHealth.controller.Main"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:l="sap.ui.layout"
+        displayBlock="true"
+        xmlns="sap.m">
+    <App
+        id="app"
+        class="pmApp">
     </App>
 </mvc:View>
