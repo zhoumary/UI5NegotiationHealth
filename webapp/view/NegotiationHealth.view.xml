@@ -1,0 +1,93 @@
+<mvc:View
+    controllerName="NegoHealthManagement.controller.NegotiationHealth"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m">
+    <l:VerticalLayout id="negoHealth" width="100%">
+        <l:content>
+            <Panel class="sapUiDemoFlexBoxSizeAdjustments">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title level="H2" text="{i18n>Title}" />
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <VBox
+                        alignContent="Stretch"
+                        alignItems="Stretch"
+                        direction="Column"
+                        width="100%">
+                        <items>
+                            <IconTabBar
+                                    id="idIconTabBar"
+                                    select="handleIconTabBarSelect"
+                                    class="sapUiResponsiveContentPadding test"
+                                    >
+                                <items>
+                                    <IconTabFilter
+                                            showAll="true"
+                                            count="77"
+                                            text="Products"
+                                            key="All" />
+                                    <IconTabSeparator />
+                                    <IconTabFilter
+                                            icon="sap-icon://begin"
+                                            iconColor="Positive"
+                                            count="{productView>/inStock}"
+                                            text="Plenty in Stock"
+                                            key="Plenty" />
+                                    <IconTabFilter
+                                            icon="sap-icon://compare"
+                                            iconColor="Critical"
+                                            count="{productView>/shortage}"
+                                            text="Shortage"
+                                            key="Shortage" />
+                                    <IconTabFilter
+                                            icon="sap-icon://inventory"
+                                            iconColor="Negative"
+                                            count="{productView>/outOfStock}"
+                                            text="Out of Stock"
+                                            key="Out" />
+                                </items>
+                            </IconTabBar>
+                            <IconTabBar
+                                    id="idIconTabBar1"
+                                    select="handleIconTabBarSelect"
+                                    class="sapUiResponsiveContentPadding">
+                                <items>
+                                    <IconTabFilter
+                                            showAll="true"
+                                            count="77"
+                                            text="Products"
+                                            key="All" />
+                                    <IconTabSeparator />
+                                    <IconTabFilter
+                                            icon="sap-icon://begin"
+                                            iconColor="Positive"
+                                            count="{productView>/inStock}"
+                                            text="Plenty in Stock"
+                                            key="Plenty" />
+                                    <IconTabFilter
+                                            icon="sap-icon://compare"
+                                            iconColor="Critical"
+                                            count="{productView>/shortage}"
+                                            text="Shortage"
+                                            key="Shortage" />
+                                    <IconTabFilter
+                                            icon="sap-icon://inventory"
+                                            iconColor="Negative"
+                                            count="{productView>/outOfStock}"
+                                            text="Out of Stock"
+                                            key="Out" />
+                                </items>
+                            </IconTabBar>
+                        </items>
+                    </VBox>
+                </content>
+            </Panel>
+        </l:content>
+    </l:VerticalLayout>
+
+</mvc:View>
